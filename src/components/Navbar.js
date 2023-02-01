@@ -11,6 +11,7 @@ const NavigationBar = (props) => (
         <Nav.Link onClick={() => props.handlePageChange('Home')}>Home</Nav.Link>
           <Nav.Link onClick={() => props.handlePageChange('About')}>About</Nav.Link>
           <Nav.Link onClick={() => props.handlePageChange('Contact')}>Contact</Nav.Link>
+          <Nav.Link onClick={() => props.handlePageChange('Project')}>Projects</Nav.Link>
         </Nav>
       </Navbar.Collapse>
     </Container>
