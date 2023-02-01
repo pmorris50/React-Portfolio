@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container, Row, Col, Nav, Navbar } from 'react-bootstrap';
-import { FaGithub } from 'react-icons/fa';
+// import { FaGithub } from 'react-icons/fa';
 
 const Footer = () => (
   <Navbar bg="dark" variant="dark" fixed="bottom">
@@ -11,10 +11,10 @@ const Footer = () => (
             <Nav.Link href="#home">Home</Nav.Link>
             <Nav.Link href="#about">About</Nav.Link>
             <Nav.Link href="#contact">Contact</Nav.Link>
-            <Nav.Link href="https://github.com/pmorris50">
+            {/* <Nav.Link href="https://github.com/pmorris50">
               <FaGithub size={20} className="mr-2" />
               GitHub
-            </Nav.Link>
+            </Nav.Link> */}
           </Nav>
         </Col>
         <Col md={4}>

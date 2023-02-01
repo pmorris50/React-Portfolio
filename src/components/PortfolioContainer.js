@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import Navbar from './Navbar';
-import Header from './Header';
+// import Header from './Header';
 import Contact from './pages/Contact';
 import Project from './pages/Project';
-import About from './pages/About'
+import About from './pages/About';
+import Home from './pages/Home';
+import Footer from './Footer';
 
 
 
@@ -20,8 +22,8 @@ export default function PortfolioContainer() {
         if (currentPage === 'Contact'){
             return <Contact />;
         }
-        if (currentPage === 'Projects'){
-            return <Projects />;
+        if (currentPage === 'Project'){
+            return <Project />;
         }
         if (currentPage === 'About'){
             return <About />;
@@ -33,10 +35,16 @@ const handlePageChange = (page) => setCurrentPage(page);
 
 return (
     <div>
-        {/*passing the currentPage from state and teh function to update it */}
-        
+      <div>
+        <Navbar handlePageChange={handlePageChange} />
+      </div>
+      <div>
+        {renderPage()}
+      </div>
+      <div>
+        <Footer/> </div>
     </div>
-)
+  )
 
 
 
