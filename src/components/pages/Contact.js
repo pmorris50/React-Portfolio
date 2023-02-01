@@ -18,6 +18,3 @@ const NavigationBar = () => (
 );
 
 export default NavigationBar;
-
-
-//customize 
