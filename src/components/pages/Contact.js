@@ -1,20 +1,9 @@
 import React from 'react';
-import { Navbar, Nav, Container } from 'react-bootstrap';
 
-const NavigationBar = () => (
-  <Navbar bg="light" expand="lg">
-    <Container>
-      <Navbar.Brand href="#home">Brand Name</Navbar.Brand>
-      <Navbar.Toggle aria-controls="basic-navbar-nav" />
-      <Navbar.Collapse id="basic-navbar-nav">
-        <Nav className="mr-auto">
-          <Nav.Link href="#home">Home</Nav.Link>
-          <Nav.Link href="#about">About</Nav.Link>
-          <Nav.Link href="#contact">Contact</Nav.Link>
-        </Nav>
-      </Navbar.Collapse>
-    </Container>
-  </Navbar>
-);
-
-export default NavigationBar;
+export default function Contact(){
+    return(
+        <div>
+            <h1>Contact Me</h1>
+        </div>
+    );
+}
