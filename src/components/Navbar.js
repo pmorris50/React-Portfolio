@@ -28,6 +28,7 @@ function NavigationBar(props) {
             <Nav.Link onClick={() => props.handlePageChange('About')}>About</Nav.Link>
             <Nav.Link onClick={() => props.handlePageChange('Contact')}>Contact</Nav.Link>
             <Nav.Link onClick={() => props.handlePageChange('Project')}>Projects</Nav.Link>
+            <Nav.Link onClick={() => props.handlePageChange('Resume')}>Resume</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

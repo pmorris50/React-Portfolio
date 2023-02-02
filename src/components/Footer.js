@@ -5,7 +5,6 @@ import { BsLinkedin } from 'react-icons/bs';
 import { IconContext } from 'react-icons';
 import { FcIphone } from 'react-icons/fc';
 import {MdOutlineEmail} from 'react-icons/md';
-// import { FaGithub } from 'react-icons/fa';
 
 const Footer = () => (
   <Navbar bg="dark" variant="dark" fixed="bottom">

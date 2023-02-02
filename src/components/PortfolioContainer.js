@@ -6,6 +6,7 @@ import Project from './pages/Project';
 import About from './pages/About';
 import Home from './pages/Home';
 import Footer from './Footer';
+import Resume from './pages/Resume';
 
 
 
@@ -28,6 +29,9 @@ export default function PortfolioContainer() {
         if (currentPage === 'About'){
             return <About />;
         }
+        if (currentPage === 'Resume'){
+          return <Resume />;
+      }
     }
 
 //the return that loads the page inside the root div. This page will contain renderpage and header, navbar, and footer
