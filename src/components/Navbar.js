@@ -24,7 +24,6 @@ function NavigationBar(props) {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
-            <Nav.Link onClick={() => props.handlePageChange('Home')}>Home</Nav.Link>
             <Nav.Link onClick={() => props.handlePageChange('About')}>About</Nav.Link>
             <Nav.Link onClick={() => props.handlePageChange('Contact')}>Contact</Nav.Link>
             <Nav.Link onClick={() => props.handlePageChange('Project')}>Projects</Nav.Link>
