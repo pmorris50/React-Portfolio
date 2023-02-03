@@ -4,25 +4,44 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import { FaGithubSquare } from 'react-icons/fa';
+import { BsFileX } from 'react-icons/bs';
+import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
+import Tooltip from 'react-bootstrap/Tooltip';
+
 
 
 function Project(props) {
-    return (
-        <Card style={{ width: '18rem' }}>
-        
-         <iframe src="https://bootycamp.herokuapp.com/"></iframe>
-          <Card.Body>
-            <Card.Title>Card Title</Card.Title>
-            <Card.Text>
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </Card.Text>
-            <Button variant="primary">Go somewhere</Button>
-          </Card.Body>
-        </Card>
-      );
-    }
+    const style = {
+        iframe: {
+            overflow: "hidden"
+        },
+ 
 
+    }
+    return (
+        <div className='m-auto'>
+            <Card style={{ width: '18rem' }}>
+                <iframe style={style.iframe} src="https://bootycamp.herokuapp.com/"></iframe>
+
+                <Card.Body>
+                    <Card.Title>MySql Project</Card.Title>
+                    <Card.Text>
+                        Some quick example text to build on the card title and make up the
+                        bulk of the card's content.
+                    </Card.Text>
+                        <a className='' target='_blank' href='https://github.com/pmorris50/Workout-Creator'> <FaGithubSquare size={40} /> </a>
+                            <a target="_blank" href="https://bootycamp.herokuapp.com/">
+                                <Button variant="primary">Visit Site</Button>
+                            </a>
+                        
+                </Card.Body>
+            </Card>
+        </div>
+    );
+}
+
+export default Project
 
 
 //     const style = {
@@ -87,5 +106,3 @@ function Project(props) {
 //         </div>
 //     )
 // };
-
- export default Project
