@@ -1,43 +1,68 @@
 import React from 'react';
 import Carousel from 'react-bootstrap/Carousel';
+import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
-function Project(props){
 
-    
+function Project(props) {
+    const style = {
+        superSize: {
+            width: '100vw',
+            height: '100vh',
+            overflow: 'hidden'
+        },
+        webpageSize: {
+            width: '75vw',
+            height: '100vw',
+            overflow: 'hidden'
+        }
+    }
+
     return (
-            <Carousel>
-              <Carousel.Item interval={1000}>
-              <iframe src = "https://bootycamp.herokuapp.com/"></iframe>
+        <div>
+        <Row>
+            <Col>
+        <Carousel style={style.superSize} autoplay={false} interval={null}> 
+            <Carousel.Item style={style.supersize}>
+                <iframe style={style.webpageSize} src="https://bootycamp.herokuapp.com/"></iframe>
                 <Carousel.Caption>
-                  <h3>First slide label</h3>
-                  <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                    <h3>First slide label</h3>
+                    <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
                 </Carousel.Caption>
-              </Carousel.Item>
-              <Carousel.Item interval={500}>a
+            </Carousel.Item>
+            <Carousel.Item>a
                 <img
-                  className="d-block w-100"
-                  src="holder.js/800x400?text=Second slide&bg=282c34"
-                  alt="Second slide"
+                    className="d-block w-100"
+                    src="holder.js/800x400?text=Second slide&bg=282c34"
+                    alt="Second slide"
                 />
                 <Carousel.Caption>
-                  <h3>Second slide label</h3>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <h3>Second slide label</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                 </Carousel.Caption>
-              </Carousel.Item>
-              <Carousel.Item>
+            </Carousel.Item>
+            <Carousel.Item>
                 <img
-                  className="d-block w-100"
-                  src="holder.js/800x400?text=Third slide&bg=20232a"
-                  alt="Third slide"
+                    className="d-block w-100"
+                    src="holder.js/800x400?text=Third slide&bg=20232a"
+                    alt="Third slide"
                 />
                 <Carousel.Caption>
-                  <h3>Third slide label</h3>
-                  <p>
-                    Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-                  </p>
+                    <h3>Third slide label</h3>
+                    <p>
+                        Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+                    </p>
                 </Carousel.Caption>
-              </Carousel.Item>
-            </Carousel>
+            </Carousel.Item>
+        </Carousel>
+        </Col>
+            <Col>
+            <h1>Where am I</h1>
+            </Col>        
+        </Row>
+        </div>
     )
 };
 
