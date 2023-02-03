@@ -7,12 +7,13 @@ import { FcIphone } from 'react-icons/fc';
 import {MdOutlineEmail} from 'react-icons/md';
 
 const Footer = () => (
-  <Navbar bg="dark" variant="dark" fixed="bottom">
+  <div className ='mb-5'>
+  <Navbar bg="dark" variant="dark" fixed="bottom" className ='mt-5'>
     <Container>
       <Row className='justify-content-center'>
         <Col md={12} className=''>
           <Nav className="mr-auto" >
-            <IconContext.Provider value={{ color: '#C0C0C0', size: 42 }}>
+            <IconContext.Provider value={{ color: '#C0C0C0', size: 28 }}>
               <div className='d-flex justify-content-center'>
                   <Nav.Link target="_blank" href="https://github.com/pmorris50"> <FaGithubSquare /></Nav.Link>
                   <Nav.Link target="_blank" href="https://www.linkedin.com/in/patrick-morris-b656b8197/"><BsLinkedin /></Nav.Link>
@@ -27,6 +28,7 @@ const Footer = () => (
       </Row>
     </Container>
   </Navbar>
+  </div>
 );
 
 export default Footer;
