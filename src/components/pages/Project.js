@@ -9,10 +9,13 @@ function Project(props) {
         {
             name: 'Workout Generator',
             details: {
-                url: '',
+                url: 'https://bootycamp.herokuapp.com/',
                 description: '',
-                repo: '',
-                tech: '',
+                repo: 'https://github.com/pmorris50/Workout-Creator',
+                tech: [
+                    "nodeMailer",
+                    "mySQL"
+                ],
 
             }
         },
@@ -42,7 +45,7 @@ function Project(props) {
 
     return (
         <div>
-            <MyCard />
+            <MyCard projects = {projects[0]}/>
         </div>
     )
 }
