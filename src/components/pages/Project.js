@@ -5,7 +5,41 @@ import MyCard from '../Card'
 
 function Project(props) {
 
-    // const data = [{}, {}, {}]
+    const projects = [
+        {
+            name: 'Workout Generator',
+            details: {
+                url: '',
+                description: '',
+                repo: '',
+                tech: '',
+
+            }
+        },
+        {
+            name: 'Daily Task Tracker',
+            details: {
+                url: '',
+                description: '',
+                repo: '',
+                tech: '',
+            }
+        },
+        {
+            name: 'React Portfolio',
+            details: {
+                url: '',
+                description: '',
+                repo: '',
+                tech: ''
+
+            }
+        }
+    ];
+
+
+
+
     return (
         <div>
             <MyCard />
