@@ -1,10 +1,15 @@
 import React from 'react';
+import MyResume from '../../documents/Resume.pdf';
 
-export default function Resume() {
+
+function Resume() {
     return (
         <div>
-            <h1>Resume</h1>
+           <iframe src ={MyResume}></iframe>
+           <h1>My Resume</h1>
         </div>
     )
 }
+
+export default Resume;
 
