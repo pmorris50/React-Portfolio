@@ -1,10 +1,11 @@
 import React from 'react';
 
+
 const DownloadButton = () => {
   const handleDownload = () => {
-    const link = document.createElement('a');
-    link.href = "../../images/profile.jpg";
-    link.download = 'file.pdf';
+    const link = alert('Clicked');
+    // link.href = "../../images/profile.jpg";
+    // link.download = 'file.pdf';
     link.click();
   };
 

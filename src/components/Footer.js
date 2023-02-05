@@ -3,12 +3,14 @@ import { Container, Row, Col, Nav, Navbar } from 'react-bootstrap';
 import { FaGithubSquare } from 'react-icons/fa';
 import { BsLinkedin } from 'react-icons/bs';
 import { IconContext } from 'react-icons';
-import { FcIphone } from 'react-icons/fc';
+import { FcIphone, FcDownload } from 'react-icons/fc';
 import {MdOutlineEmail} from 'react-icons/md';
+import MyResume from '../images/Resume.pdf'
+
 
 const Footer = () => (
   <div className ='mb-5'>
-  <Navbar bg="dark" variant="dark" fixed="bottom" className ='mt-5'>
+  <Navbar bg="dark" variant="dark" fixed="bottom" className ='mt-1'>
     <Container>
       <Row className='justify-content-center'>
         <Col md={12} className=''>
@@ -19,6 +21,7 @@ const Footer = () => (
                   <Nav.Link target="_blank" href="https://www.linkedin.com/in/patrick-morris-b656b8197/"><BsLinkedin /></Nav.Link>
                   <Nav.Link href="tel: +1-940-367-7687"><FcIphone /></Nav.Link>
                   <Nav.Link target="_blank" href="mailto: patrickmorris532@gmail.com"> <MdOutlineEmail /></Nav.Link>
+                  <Nav.Link target="_blank" href={MyResume} download> <FcDownload/></Nav.Link>
                </div>
 
             </IconContext.Provider>

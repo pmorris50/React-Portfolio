@@ -1,12 +1,14 @@
 import React from 'react';
-import { Navbar } from 'react-bootstrap';
+import { Navbar, NavbarBrand, NavbarToggler, Collapse } from 'react-bootstrap';
 import Nav from 'react-bootstrap/Nav';
 import Container from 'react-bootstrap/Navbar';
 
 
 
-function NavigationBar(props) {
 
+function NavigationBar(props) {
+  const [isOpen, setIsOpen] = React.useState(false);
+  const toggle = () => setIsOpen(!isOpen);
 // const styles = {
 //   taco: {
 //     backgroundColor: "red",
@@ -18,7 +20,7 @@ function NavigationBar(props) {
 //
 
   return (
-    <Navbar className = "ml-3" bg="light" expand="lg">
+    <Navbar collapseOnSelect className = "ml-3" bg="light" expand="md">
       <Container>
         <Navbar.Brand >Patrick Morris</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -28,6 +30,7 @@ function NavigationBar(props) {
             <Nav.Link onClick={() => props.handlePageChange('Contact')}>Contact</Nav.Link>
             <Nav.Link onClick={() => props.handlePageChange('Project')}>Projects</Nav.Link>
             <Nav.Link onClick={() => props.handlePageChange('Resume')}>Resume</Nav.Link>
+         
           </Nav>
         </Navbar.Collapse>
       </Container>
