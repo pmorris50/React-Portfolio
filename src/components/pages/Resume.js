@@ -1,8 +1,8 @@
-import React from 'react';
+import React, {useStates} from 'react';
 import MyResume from '../../documents/Resume.pdf';
 import ProfilePic from '../../images/profile.jpg';
 import Container from 'react-bootstrap/ToastContainer';
-
+import DownloadButton from '../DownloadBtn';
 function Resume() {
     const style = {
         background:
@@ -16,11 +16,16 @@ function Resume() {
         timetext: {
             textDecoration: 'underline'
 
+        },
+        download: 
+        {
+            backgroundColor: "007bff",
+            color: '#fff'
         }
     }
     return (
-        <Container>
-     
+        <Container className = 'm-auto'>
+   
 
         <header  style = {style.background}className="bg-gradient text-white py-5">
   <div className="container">
@@ -30,15 +35,16 @@ function Resume() {
       </div>
       <div className="col-md-9">
         <h1>Patrick Morris</h1>
-        <h5>Web Developer</h5>
+        <h5 className = "mt-5">Web Developer</h5>
         <p className="border-top pt-3">Thank you for visiting my Portfolio. You can take a look at my resume below and download a PDF version </p>
-      </div>       
+      </div>
+      <DownloadButton/>       
     </div>        
   </div>
 </header>
 <main class="container">
   <div class="row">
-    <div class="col-md mb-5">
+    <div class="col-md mb-6">
      <h3>Work Experience</h3>
      <ul style={style.jobtext}>
        Pulte Mortgage Loan Consultant
@@ -77,17 +83,12 @@ function Resume() {
          From January 2017 - March 2017
         </li>
         <li>
-      
-        </li>
-        <li>
         Duties: calculating taxable income, and filling out respective IRS forms. As well as planning taxable events
         </li>
         <li>
-        Attention to detail and learning new systems and regulations were major components of this job
+        Attention to detail, learning new systems and regulations were major components of this job
         </li>
-        <li>
-           I was on track to complete my masters in accounting at TCU and return full time but ultimately I chose to pursue a career in football
-        </li>
+        
         
     </div>
     <div class="col-md mb-5">
@@ -111,8 +112,23 @@ function Resume() {
       Fullstack web developer bootcamp
         </li>
         <ul style={style.jobtext} className = 'mt-3'>
-      Skills
+      Skills and Licenses
         </ul> 
+        <li>
+            Javascript
+        </li>
+        <li>
+            HTML
+        </li>
+        <li>
+            React
+        </li>
+        <li>
+            SQL
+        </li>
+        <li>
+            MongoDB
+        </li>
         <li>
         Licensed Mortgage Loan Originator NMLS #2223246 
         </li>    
@@ -125,9 +141,15 @@ function Resume() {
 
 </main>
 
+
 </Container>
   )};
 
 
 export default Resume;
 
+
+{/* <button style = {style.download} type="button" class="btn btn-secondary">
+<i class="fas fa-download"></i> Download
+</button>
+ */}
