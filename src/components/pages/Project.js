@@ -41,7 +41,7 @@ function Project(props) {
         {
             name: 'React Portfolio',
             details: {
-                url: '',
+                url: ' https://pmorris50.github.io/React-Portfolio/',
                 description: 'My personal portfolio, highlighting my projects using the React framework',
                 repo: 'https://github.com/pmorris50/React-Portfolio',
                 tech: [
