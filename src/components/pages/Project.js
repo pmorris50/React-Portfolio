@@ -51,7 +51,21 @@ function Project(props) {
                 ]
 
             }
-        }
+        },
+        {
+            name: 'Home Town Hero',
+            details: {
+                url: 'https://hometownhero.herokuapp.com/',
+                description: 'This application allows a pro athlete/college athlete to log in as an admin, create a youth camp for a user to register and purchase products through his/her shop',
+                repo: 'https://github.com/pmorris50/HometownHero',
+                tech: [
+                    "React",
+                    "GraphQL",
+                    "Bootstrap"
+                ],
+
+            }
+        },
     ];
 
 
@@ -63,6 +77,7 @@ function Project(props) {
                 <MyCard projects={projects[0]} />
                 <MyCard  projects={projects[1]} />
                 <MyCard projects={projects[2]} />
+                <MyCard projects = {projects[3]}/>
             
         </div>
     )
