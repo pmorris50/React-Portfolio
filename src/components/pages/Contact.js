@@ -2,181 +2,171 @@ import React, { useState } from 'react';
 import TimePicker from 'react-time-picker';
 import DatePicker from 'react-date-picker';
 import { Form, Button, Container, Row, Col } from 'react-bootstrap';
+import './Contact.css'
 
 const ContactForm = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: '',
-    date: '',
-    time: '',
+    const [phone, setPhone] = useState('');
 
-  });
-  const [selectedDate, setSelectedDate] = useState(new Date());
-  const [selectedTime, setSelectedTime] = useState('00:00');
+    const handlePhoneChange = (event) => {
+      const input = event.target.value.replace(/[^\d]/g, '').substring(0, 10); // Remove non-digits and limit to 10 characters
+      const formattedInput = input.replace(/(\d{3})?(\d{1,3})?(\d{1,4})?/, (match, p1, p2, p3) => {
+        let parts = [];
+        if (p1) {
+          parts.push(p1);
+        }
+        if (p2) {
+          parts.push(p2);
+        }
+        if (p3) {
+          parts.push(p3);
+        }
+        return parts.join('-');
+      }); // Insert dashes at appropriate positions
+      setPhone(formattedInput);
+    };
+  
 
-  const handleChange = (event) => {
-    setFormData({
-      ...formData,
-      [event.target.name]: event.target.value,
-    });
-  };
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    console.log('Form Data: ', formData);
-    // You would add the logic to send the form data to your backend here
+  const styles = {
+    input: {
+      border: '1px solid #ccc',
+      borderRadius: '10px',
+      padding: '8px',
+      width: '100%',
+    },
+ 
+    textarea: {
+        width: "100%",
+        height: '150px',
+        
+    },
+    contactMe: {
+      textAlign: 'center',
+      margin: "30px",
+      padding: "15px"
+    },
+    button: {
+      display: 'block',
+      margin: "0 auto",
+      marginTop: "40px",
+      padding: "10px",
+      borderRadius: "15px"
+    }
   };
 
   return (
-    <Container className="my-5">
-      <Row className="justify-content-center">
-        <Col md={8}>
-          <Form onSubmit={handleSubmit}>
-            <Form.Group controlId="formName">
-              <Form.Label>Name</Form.Label>
-              <Form.Control
-                type="text"
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-                required
-              />
-            </Form.Group>
-            <Form.Group controlId="formEmail">
-              <Form.Label>Email</Form.Label>
-              <Form.Control
-                type="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                required
-              />
-            </Form.Group>
-            <Form.Group controlId="formSubject">
-              <Form.Label>Subject</Form.Label>
-              <Form.Control
-                type="text"
-                name="subject"
-                value={formData.subject}
-                onChange={handleChange}
-                required
-              />
-            </Form.Group>
-            <Form.Group controlId="formMessage">
-              <Form.Label>Message</Form.Label>
-              <Form.Control
-                as="textarea"
-                rows="3"
-                name="message"
-                value={formData.message}
-                onChange={handleChange}
-                required
-              />
-            </Form.Group>
-            <div className ='mt-2'>
-            <Form.Group controlId="formDate">
-              <Form.Label>Date:</Form.Label>
-              <DatePicker
-                onChange={date => setSelectedDate(date)}
-                value={selectedDate}
-              />
-            </Form.Group>
+
+    <container className="container" >
+      <div className = 'card m-5 p-3 customCard' >
+      <form action="https://formsubmit.co/patrickmorris532@gmail.com" method="POST" id="my-form">
+        <input type="hidden" name="_subject" value="New Inquirer"></input>
+        <h1>Contact Me</h1>
+        <div className="row m-auto">
+          <div className="col-md-4 col-sm-12">
+
+            <div className='row m-4'>
+              <label htmlFor="name"></label>
+              <input placeholder="Name" className="text-box" style = {styles.placeholder} type="text" id="name" name="name" required></input>
             </div>
-              <div className ='mt-2'>
-            <Form.Group controlId="formTime">
-              <Form.Label>Time:</Form.Label>
-              <TimePicker disableClock = {true}
-                onChange={time => setSelectedTime(time)}
-                value={selectedTime}
-              />
-            </Form.Group>
+
+            <div className="row m-4">
+              <label htmlFor="email"></label>
+              <input placeholder='Email' className="text-box" type="email" id="email" name="email" required></input>
             </div>
-            <Button variant="primary" type="submit">
-              Submit
-            </Button>
-          </Form>
-        </Col>
-      </Row>
-    </Container>
-  );
-};
 
-export default ContactForm;
+            <div className="row m-4">
+              <label htmlFor="phone"></label>
+              <input placeholder="Phone Number"  className="text-box" type="tel" id="phone" name="phone" value = {phone} onChange = {handlePhoneChange} required></input>
+            </div>
+          </div>
 
+          <div className="col-md-7 col-sm-12 m-auto center">
+            <label htmlFor="message"></label>
+            <textarea placeholder="Please leave me a message and I will be in contact with you shortly" id="message" name="message" required></textarea>
+          </div>
+        </div>
+        <div >
+        <button style= {styles.button} type="submit"> Send Email</button>
+        </div>
+      </form>
+      </div>
+    </container>
 
+  )
+}
 
-// const Form = () => {
+export default ContactForm
+
+// const ContactForm = () => {
 //   const [formData, setFormData] = useState({
+//     name: '',
 //     email: '',
-//     subject: '',
 //     message: '',
-//     date: '',
-//     time: ''
+
 //   });
+//   const [selectedDate, setSelectedDate] = useState(new Date());
+//   const [selectedTime, setSelectedTime] = useState('00:00');
 
 //   const handleChange = (event) => {
 //     setFormData({
 //       ...formData,
-//       [event.target.name]: event.target.value
+//       [event.target.name]: event.target.value,
 //     });
 //   };
 
+//   const handleSubmit = (event) => {
+//     event.preventDefault();
+//     console.log('Form Data: ', formData);
+//     // You would add the logic to send the form data to your backend here
+//   };
+
 //   return (
-//     <form>
-//       <div>
-//         <label htmlFor="email">Email:</label>
-//         <input
-//           type="email"
-//           id="email"
-//           name="email"
-//           value={formData.email}
-//           onChange={handleChange}
-//         />
-//       </div>
-//       <div>
-//         <label htmlFor="subject">Subject:</label>
-//         <input
-//           type="text"
-//           id="subject"
-//           name="subject"
-//           value={formData.subject}
-//           onChange={handleChange}
-//         />
-//       </div>
-//       <div>
-//         <label htmlFor="message">Message:</label>
-//         <textarea
-//           id="message"
-//           name="message"
-//           value={formData.message}
-//           onChange={handleChange}
-//         />
-//       </div>
-//       <div>
-//         <label htmlFor="date">Date:</label>
-//         <input
-//           type="date"
-//           id="date"
-//           name="date"
-//           value={formData.date}
-//           onChange={handleChange}
-//         />
-//       </div>
-//       <div>
-//         <label htmlFor="time">Time:</label>
-//         <input
-//           type="time"
-//           id="time"
-//           name="time"
-//           value={formData.time}
-//           onChange={handleChange}
-//         />
-//       </div>
-//       <button type="submit">Submit</button>
-//     </form>
+//     <Container className="my-5">
+//     <Form onSubmit={handleSubmit}>
+//       <Row className="mb-3">
+//         <Form.Group as={Col} controlId="formName">
+//           <Form.Label>Name</Form.Label>
+//           <Form.Control
+//             type="text"
+//             name="name"
+//             value={formData.name}
+//             onChange={handleChange}
+//             required
+//           />
+//         </Form.Group>
+//         <Form.Group as={Col} controlId="formEmail">
+//           <Form.Label>Email</Form.Label>
+//           <Form.Control
+//             type="email"
+//             name="email"
+//             value={formData.email}
+//             onChange={handleChange}
+//             required
+//           />
+//         </Form.Group>
+//       </Row>
+//       <Row className="mb-3">
+//         <Form.Group as={Col} controlId="formMessage">
+//           <Form.Label>Message</Form.Label>
+//           <Form.Control
+//             as="textarea"
+//             rows="3"
+//             name="message"
+//             value={formData.message}
+//             onChange={handleChange}
+//             required
+//           />
+//         </Form.Group>
+//       </Row>
+//       <Row className="justify-content-center">
+//         <Button variant="primary" type="submit">
+//           Submit
+//         </Button>
+//       </Row>
+//     </Form>
+//   </Container>
 //   );
 // };
 
-// export default Form;
+// export default ContactForm;
+
+

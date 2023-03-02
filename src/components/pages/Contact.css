@@ -1,0 +1,159 @@
+input {
+    text-align: center;
+    border: 3px solid #ccc;
+    border-radius: 15px;
+    /* box-shadow: 2px 2px 4px 6 #ccc; */
+    width: 95%;
+  }
+input {
+    transition: transform 0.2s ease-in-out;
+    padding: 3px;
+   
+}
+input[type ="text"][name = "name"] {
+    animation: float-left 4s ease-in-out forwards;
+    animation-delay: 0s;
+}
+input[type ="email"][name = "email"] {
+    animation: float-left 4s ease-in-out forwards;
+    animation-delay: 1s;
+}
+input[type ="tel"][name = "phone"] {
+    opacity: 0;
+    animation: float-left 4s ease-in-out forwards;
+    animation-delay: 2s;
+}
+input::placeholder {
+    text-align: center;
+    font-style: italic;
+}
+input:hover,
+input:active,
+input:focus {
+    box-shadow: 6px 6px 12px 6 black;
+    transform: scale(1.1);
+    outline: 1px solid black;
+    border: 2px solid black;
+}
+
+button{
+    padding: 10px 20px;
+    display: block;
+    margin: 0 auto;
+    margin-top: 40px;
+    margin-bottom: 30px;
+    padding: 10px;
+    border: none;
+    border-radius: 15px;
+    font-size: 16px;
+    transition: color 0.90s ease, background-color 0.9s ease, transform 0.2s ease-in-out;
+    box-shadow: inset;
+    background-color: lightslategray;
+    color: tan;
+    transform: translateY(600%);
+    animation: float-right 3s ease-in-out forwards;
+    animation-delay: 5.5s;
+}
+button:hover {
+    background-color: tan;
+    color: lightslategray;
+    transform: scale(1.1);
+    
+}
+
+button:active { 
+    transform: translateY(30px)
+}
+
+textarea {
+   
+    width: 90%;
+    border: 3px solid #ccc;
+    border-radius: 15px;
+    box-shadow: 2px 2px 4px 6 #ccc;
+    height: 150px;
+    /* transition: transform 0.2s ease-in-out; */
+    transform: translateY(600%);
+    animation: float-right 4s ease-in-out forwards;
+    animation-delay: 3s;
+    padding: 10px;
+    
+    
+}
+
+textarea::placeholder{
+    font-style: italic;
+    text-align: center;
+    line-height: 8;
+    
+}
+
+textarea:hover, 
+textarea:active
+ {
+    transform: scale(1.1);
+    outline: 1px solid black;
+    border: 2px solid black;
+}
+textarea:focus, input:focus {
+    background-color: whitesmoke;
+    transform: scale(1.1);
+    outline: 1px solid black;
+    border: 2px solid black;
+}
+
+h1{
+    text-align: center;
+    margin: 30px;
+    padding: 15px;
+    transform: translateY(300%);
+    animation: float-down 2s ease-out forwards;
+    
+}
+.customCard{ 
+    box-shadow: 0 2px 4px grey;
+    transform: translateY(300%);
+    animation: float-up 2s ease-out forwards;
+}
+
+
+@keyframes float-up {
+    0% {
+        opacity: 0;
+        transform: translateY(300%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes float-right {
+    0% {
+        opacity: 0;
+        transform: translateX(600%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@keyframes float-left {
+    0% {
+        opacity: 0;
+        transform: translateX(-600%)
+    }
+    100% {
+        opacity: 1;
+        transform: translateX()
+    }
+}
+@keyframes float-down {
+    0% {
+        opacity: 0;
+        transform: translateY(-300%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
