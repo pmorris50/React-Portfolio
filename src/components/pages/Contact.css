@@ -22,6 +22,8 @@ h1 {
 .background {
     background-color: deepskyblue;
     z-index: 1;
+    padding-bottom: 25px;
+    margin: 0;
 }
 
 input {

@@ -9,7 +9,7 @@ import MyResume from '../images/Resume.pdf'
 
 
 const Footer = () => (
-  <div className ='mb-5'>
+  <div className ='mb-5 fbody'>
   <Navbar bg="dark" variant="dark" fixed="bottom" className ='mt-1'>
     <Container>
       <Row className='justify-content-center'>
