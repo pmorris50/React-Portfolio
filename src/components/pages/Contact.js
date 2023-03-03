@@ -54,19 +54,17 @@ const ContactForm = () => {
   };
 
   return (
-<div className =  'background' id = "clouds">
-  <div class = "cloud x1"></div>
-  <div class = "cloud x2"></div>
-  <div class = "cloud x3"></div>
-  <div class = "cloud x4"></div>
-  <div class = "cloud x5"></div>
+<div className =  'background'>
+
     <container className="container" >
       
       <div className = 'm-5 p-3 customCard' >
     
       <form action="https://formsubmit.co/patrickmorris532@gmail.com" method="POST" id="my-form">
         <input type="hidden" name="_subject" value="New Inquirer"></input>
+        
         <h1>Contact Me</h1>
+    
         <div className="row m-auto">
           <div className="col-md-4 col-sm-12">
 
