@@ -54,9 +54,16 @@ const ContactForm = () => {
   };
 
   return (
-
+<div className =  'background' id = "clouds">
+  <div class = "cloud x1"></div>
+  <div class = "cloud x2"></div>
+  <div class = "cloud x3"></div>
+  <div class = "cloud x4"></div>
+  <div class = "cloud x5"></div>
     <container className="container" >
-      <div className = 'card m-5 p-3 customCard' >
+      
+      <div className = 'm-5 p-3 customCard' >
+    
       <form action="https://formsubmit.co/patrickmorris532@gmail.com" method="POST" id="my-form">
         <input type="hidden" name="_subject" value="New Inquirer"></input>
         <h1>Contact Me</h1>
@@ -81,7 +88,7 @@ const ContactForm = () => {
 
           <div className="col-md-7 col-sm-12 m-auto center">
             <label htmlFor="message"></label>
-            <textarea placeholder="Please leave me a message and I will be in contact with you shortly" id="message" name="message" required></textarea>
+            <textarea placeholder="Please leave me a message!" id="message" name="message" required></textarea>
           </div>
         </div>
         <div >
@@ -89,7 +96,9 @@ const ContactForm = () => {
         </div>
       </form>
       </div>
+      
     </container>
+    </div>
 
   )
 }
