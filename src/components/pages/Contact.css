@@ -1,7 +1,7 @@
 
  @import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap');
 
-h1 {
+.contactHeader {
     border-radius: 10px;
     background: black;
     font-family: 'Alfa slab One';
@@ -22,7 +22,7 @@ h1 {
 
 
 
-.background {
+.backgroundContact {
     background-color: black;
     z-index: 1;
     padding-bottom: 25px;
@@ -67,7 +67,7 @@ input:focus {
     border: 2px solid black; */
 }
 
-button{
+.submitBtn{
     padding: 10px 20px;
     display: block;
     margin: 0 auto;
@@ -85,7 +85,7 @@ button{
     animation: float-right 3s ease-in-out forwards;
     animation-delay: 6s;
 }
-button:hover {
+.submitBtn:hover {
     background-color: cyan;
     color: black;
     transform: scale(2.1);
@@ -95,7 +95,7 @@ button:hover {
     
 }
 
-button:active { 
+.submitBtn:active { 
     transform: translateY(30px)
 }
 

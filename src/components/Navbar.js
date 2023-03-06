@@ -2,6 +2,7 @@ import React from 'react';
 import { Navbar, NavbarBrand, Collapse } from 'react-bootstrap';
 import Nav from 'react-bootstrap/Nav';
 import Container from 'react-bootstrap/Navbar';
+import './Navbar.css';
 
 
 
@@ -20,7 +21,7 @@ function NavigationBar(props) {
 //
 
   return (
-    <Navbar collapseOnSelect className = "ml-3" bg="light" expand="md">
+    <Navbar collapseOnSelect className = "myNav ml-3" bg="light" expand="md">
       <Container>
         <Navbar.Brand >Patrick Morris</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />

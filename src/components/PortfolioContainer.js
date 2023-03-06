@@ -38,13 +38,14 @@ const handlePageChange = (page) => setCurrentPage(page);
 return (
     <div>
       <div>
-        <Navbar handlePageChange={handlePageChange} />
+        {/* <Navbar handlePageChange={handlePageChange} /> */}
       </div>
       <div>
         {renderPage()}
       </div>
-      <div>
-        <Footer/> </div>
+      {/* <div>
+       <div> <Footer/> </div>
+    </div> */}
     </div>
   )
 

@@ -54,7 +54,7 @@ const ContactForm = () => {
   };
 
   return (
-<div className =  'background'>
+<div className =  'backgroundContact'>
 
     <container className="container" >
       
@@ -63,7 +63,7 @@ const ContactForm = () => {
       <form action="https://formsubmit.co/patrickmorris532@gmail.com" method="POST" id="my-form">
         <input type="hidden" name="_subject" value="New Inquirer"></input>
         
-        <h1>Contact Me</h1>
+        <h1 className = 'contactHeader'>Contact Me</h1>
     
         <div className="row m-auto">
           <div className="col-md-4 col-sm-12">
@@ -90,7 +90,7 @@ const ContactForm = () => {
           </div>
         </div>
         <div >
-        <button style= {styles.button} type="submit"> Send Email</button>
+        <button className ='submitBtn' style= {styles.button} type="submit"> Send Email</button>
         </div>
       </form>
       </div>
