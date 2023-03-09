@@ -1,114 +1,182 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import './About.css';
-import {GiMountainRoad }from 'react-icons/gi'
+
 
 
 function About() {
-  const hobbieIcon = <GiMountainRoad/>
-    const [selectedSection, setSelectedSection] = useState("Family");
-    const [activeIndex, setActiveIndex] = useState(0);
-  
-    function handleClick(e) {
-      const target = e.target;
-      
-      const sectionName = target.textContent;
-      setSelectedSection(sectionName);
-      
+  const [screenSize, setScreenSize] = useState('');
+  const [selectedSection, setSelectedSection] = useState("Family");
+  const [activeIndex, setActiveIndex] = useState(0);
 
-
-      const items = document.querySelectorAll(".ponyRideItem");
-      items.forEach((item, index) => {
-        if (item.querySelector("h1").textContent === sectionName) {
-          item.classList.remove("hide");
-          setActiveIndex(index);
-        } else {
-          item.classList.add("hide");
-        }
-      });
-    }
-  
-    function handleNext() {
-      const items = document.querySelectorAll(".ponyRideItem");
-      if (activeIndex < items.length - 1) {
-        items[activeIndex].classList.add("hide");
-        items[activeIndex + 1].classList.remove("hide");
-        setActiveIndex(activeIndex + 1);
-        setSelectedSection(items[activeIndex + 1].querySelector("h1").textContent);
+  useEffect(() => {
+    function handleResize() {
+      if (window.innerWidth < 768) {
+        setScreenSize('small');
       } else {
-        // cycle back to the first item
-        items[activeIndex].classList.add("hide");
-        items[0].classList.remove("hide");
-        setActiveIndex(0);
-        setSelectedSection(items[0].querySelector("h1").textContent);
-      }
-    }
-  
-    function handlePrevious() {
-      const items = document.querySelectorAll(".ponyRideItem");
-      if (activeIndex > 0) {
-        items[activeIndex].classList.add("hide");
-        items[activeIndex - 1].classList.remove("hide");
-        setActiveIndex(activeIndex - 1);
-        setSelectedSection(items[activeIndex - 1].querySelector("h1").textContent);
-      } else {
-        // cycle back to the last item
-        items[activeIndex].classList.add("hide");
-        items[items.length - 1].classList.remove("hide");
-        setActiveIndex(items.length - 1);
-        setSelectedSection(items[items.length - 1].querySelector("h1").textContent);
+        setScreenSize('large');
       }
     }
 
-    return (
-        <div className="backgroundAbout">
-            <div className='containerAbout'>
-                <div className='ponyRide Myinfo'>
-                    <div className="ponyRideItem">
-                        <h1>Family</h1>
-                    </div>
-                    <div className="ponyRideItem hide">
-                        <h1>Hobbies</h1>
-                    </div>
-                    <div className="ponyRideItem hide">
-                        <h1>Work</h1>
-                    </div>
-                    <button className="ponyPrevious" onClick = {handlePrevious}>Previous</button>
-                    <button className="ponyNext" onClick =  {handleNext}>Next</button>
+    handleResize();
 
-                    <div className='aboutNav'>
+    window.addEventListener('resize', handleResize);
 
-                    <a
-              className= {`aboutSection ${
-                selectedSection === 'Family' ? 'selected' : ''
-              } customNavLink flipIt`}
-              onClick={handleClick}
-            >
-              Family
-            </a>
-            <a
-              className={`aboutSection ${
-                selectedSection === 'Hobbies' ? 'selected' : ''
-              } customNavLink flipIt`}
-              onClick={handleClick}
-            >
-            Hobbies
-            </a>
-            <a
-              className={`aboutSection ${
-                selectedSection === 'Work' ? 'selected' : ''
-              } customNavLink flipIt`}
-              onClick={handleClick}
-            >
-              Work
-            </a>
-                    </div>
-                </div>
+    return () => {
+      window.removeEventListener('resize', handleResize);
+      if (screenSize === 'large') {
+        const items = document.querySelectorAll(".ponyRideItem");
+        items.forEach((item) => {
+          item.removeEventListener("click", handleClick);
+        });
+        const prevButton = document.querySelector(".ponyPrevious");
+        prevButton.removeEventListener("click", handlePrevious);
+        const nextButton = document.querySelector(".ponyNext");
+        nextButton.removeEventListener("click", handleNext);
+      }
+    };
+  }, [screenSize]);
+
+  function handleClick(e) {
+
+    const target = e.target;
+
+    const sectionName = target.getAttribute('data-section');
+    console.log("Section Name: ", sectionName);
+    setSelectedSection(sectionName);
 
 
-            </div>
+
+    const items = document.querySelectorAll(".ponyRideItem");
+    items.forEach((item, index) => {
+      if (item.querySelector("h1").textContent === sectionName) {
+        item.classList.remove("hide");
+        setActiveIndex(index);
+      } else {
+        item.classList.add("hide");
+      }
+    });
+  }
+
+  function handleNext() {
+    const items = document.querySelectorAll(".ponyRideItem");
+    if (activeIndex < items.length - 1) {
+      items[activeIndex].classList.add("hide");
+      items[activeIndex + 1].classList.remove("hide");
+      setActiveIndex(activeIndex + 1);
+      setSelectedSection(items[activeIndex + 1].querySelector("h1").textContent);
+    } else {
+      // cycle back to the first item
+      items[activeIndex].classList.add("hide");
+      items[0].classList.remove("hide");
+      setActiveIndex(0);
+      setSelectedSection(items[0].querySelector("h1").textContent);
+    }
+  }
+
+  function handlePrevious() {
+    const items = document.querySelectorAll(".ponyRideItem");
+    if (activeIndex > 0) {
+      items[activeIndex].classList.add("hide");
+      items[activeIndex - 1].classList.remove("hide");
+      setActiveIndex(activeIndex - 1);
+      setSelectedSection(items[activeIndex - 1].querySelector("h1").textContent);
+    } else {
+      // cycle back to the last item
+      items[activeIndex].classList.add("hide");
+      items[items.length - 1].classList.remove("hide");
+      setActiveIndex(items.length - 1);
+      setSelectedSection(items[items.length - 1].querySelector("h1").textContent);
+    }
+  }
+
+  return (
+    <div className="backgroundAbout">
+      <div className='containerAbout'>
+        <div className='ponyRide Myinfo'>
+          <div className="ponyRideItem">
+            <h1>Family</h1>
+          </div>
+          <div className="ponyRideItem hide">
+            <h1>Hobbies</h1>
+          </div>
+          <div className="ponyRideItem hide">
+            <h1>Work</h1>
+          </div>
+          <button className="ponyPrevious" onClick={handlePrevious}>Previous</button>
+          <button className="ponyNext" onClick={handleNext}>Next</button>
+
+          <div className='aboutNav'>
+            {screenSize === 'large' ? (
+              <div className='bigControls'>
+                <a
+                  className={`aboutSection ${selectedSection === 'Family' ? 'selected' : ''
+                    } customNavLink flipIt`}
+                  onClick={handleClick}
+                  data-section="Family"
+                >
+                  Family
+                </a>
+                <a
+                  className={`aboutSection ${selectedSection === 'Hobbies' ? 'selected' : ''
+                    } customNavLink flipIt`}
+                  onClick={handleClick}
+                  data-section="Hobbies"
+                >
+                  Hobbies
+                </a>
+                <a
+                  className={`aboutSection ${selectedSection === 'Work' ? 'selected' : ''
+                    } customNavLink flipIt`}
+                  onClick={handleClick}
+                  data-section="Work"
+                >
+                  Work
+                </a>
+              </div>
+            ) : (
+              <div className="littleControls">
+                <div className ="lilControlLink">
+                  <a
+                    className={`aboutSection ${selectedSection === 'Family' ? 'selected' : ''
+                      }  circle`}
+                    onClick={handleClick}
+                    data-section="Family"
+                  >
+                    
+                  </a>
+               </div>
+               <div className ="lilControlLink">
+                  <a
+                    className={`aboutSection ${selectedSection === 'Hobbies' ? 'selected' : ''
+                      }   circle`}
+                    onClick={handleClick}
+                    data-section="Hobbies"
+                  >
+                    
+                  </a>
+               </div>
+                <div className ="lilControlLink">
+                  <a
+               className={`aboutSection ${selectedSection === 'Work' ? 'selected' : ''
+                      }   circle`}
+                    onClick={handleClick}
+                    data-section="Work"
+                  >
+                    
+                  </a>
+               </div>
+
+              </div>
+            )}
+
+          </div>
         </div>
-    )
+
+
+      </div>
+    </div>
+  )
 
 }
 export default About

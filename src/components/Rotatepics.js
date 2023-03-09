@@ -14,6 +14,7 @@ function Rotate3d() {
                         <div className='size'id ="purple"></div>
                         <div className='size'id ="orange"></div>
                         <div className='size'id ="red"></div>
+                      
 
 
                     </figure>

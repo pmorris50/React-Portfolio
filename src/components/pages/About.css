@@ -49,28 +49,76 @@
 
 }
 .aboutSection {
-  padding: 10px;
-  margin: 10px;
+  padding: 5px;
+  margin: 5px 30px;
   background-color: lightblue;
   cursor: pointer;
+  text-decoration: none;
+
 }
-.aboutSection.selected {
-  color: green;
- animation: flip 3s infinite linear;
-}
+/* .aboutSection.selected {
+  color: yellow;
+  animation: flip 5s infinite linear forwards;
+  background-color: Blue;
+  transform-style: preserve-3d;
+
+
+} */
+
 .customNavLink{
   color: Black;
 }
 
+.bigControls {
+  display: flex;
+  align-items: center;
+  align-content: center;
+}
+.littleControls {
+  display: flex;
+  align-items: center;
+  align-content: center;
+}
 
 
 /* add animation to .flipIt.rotate */
 
 @keyframes flip {
-  from {
-    transform: rotateZ(0deg);
+  0% {
+    transform: rotateY(0deg) rotateZ(0deg)
   }
-  to {
-    transform: rotateZ(360deg);
+  100% {
+    transform: rotateY(360deg) rotateZ(360deg)
   }
 }
+
+
+
+  .circle {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin: 5px 25px;
+    padding: 10px;
+    opacity: 50%;
+    border: 2px black solid;
+    
+
+  }
+
+
+  .aboutsection.selected.circle {
+    opacity: 100%;
+    outline: black 2px solid;
+    box-shadow: 1px 1px 12px;
+    animation: smallSelected 1s infinite linear !important;
+    
+   
+  }
+
+
+  @keyframes smallSelected{
+    0% {transform: translateY(0px)};
+    50% {transform: translateY(200px) };
+    100%{transform: translateY(150px)};
+  }
