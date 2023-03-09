@@ -56,35 +56,21 @@
 }
 .aboutSection.selected {
   color: green;
+ animation: flip 3s infinite linear;
+}
+.customNavLink{
+  color: Black;
 }
 
 
-/* .aboutContainer {
-    height: 100vh;
-    overflow: hidden;
+
+/* add animation to .flipIt.rotate */
+
+@keyframes flip {
+  from {
+    transform: rotateZ(0deg);
   }
-  
-  .section {
-    height: 100vh;
-    width: 100%;
-    scroll-snap-align: start;
-    overflow-y: scroll;
-    scroll-behavior: smooth;
+  to {
+    transform: rotateZ(360deg);
   }
-  
-  .football {
-    background-color: lightblue;
-    padding: 10px;
-  }
-  
-  .outdoors {
-    background-color: lightgreen;
-  }
-  
-  .family {
-    background-color: lightcoral;
-  }
-  
-  .work {
-    background-color: bisque;
-  } */
+}

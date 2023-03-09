@@ -1,0 +1,96 @@
+.myImage {
+    height: 200px;
+    width: 150px;
+    transform-origin: center center;
+    border: solid yellow 10px;
+}
+
+.container {
+    width: 300px;
+    height: 300px;
+    perspective: 1000px;
+    
+  }
+  
+  .flip-card {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transform: rotateY(45deg);
+    
+  }
+  
+ 
+  
+  .flip-card-inner {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transform-style: preserve-3d;
+    animation: rotateFront 10s infinite linear;
+    border: solid black 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(90deg, #ff5f6d, #ff5f6d, #ffc371, #ff5f6d);
+    background-size: 200% 200%;
+    /* animation: lavalamp 3s ease-in-out infinite; */
+
+  }
+  
+  .flip-card-front,
+  .flip-card-back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    margin: 10px;
+    
+  }
+  
+  .flip-card-front {
+    transform: rotateY(0deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+  }
+  
+  .flip-card-back {
+    transform: rotateY(180deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+
+  @keyframes rotateFront {
+    0% {
+        transform: rotateY(0deg)
+    }
+    100% {
+        transform: rotateY(360deg) 
+    }
+}
+
+@keyframes lava-lamp {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {background-position: 0% 50%;}
+}
+
+    /* 50% {
+        transform: rotateZ(90deg)
+        translateZ(0px);
+    }
+
+    100% {
+        transform: rotateY(360deg)
+        translateZ(0px);
+    }
+  } */

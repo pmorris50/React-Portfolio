@@ -1,16 +1,22 @@
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import './About.css';
+import {GiMountainRoad }from 'react-icons/gi'
 
 
 function About() {
+  const hobbieIcon = <GiMountainRoad/>
     const [selectedSection, setSelectedSection] = useState("Family");
     const [activeIndex, setActiveIndex] = useState(0);
   
     function handleClick(e) {
       const target = e.target;
+      
       const sectionName = target.textContent;
       setSelectedSection(sectionName);
+      
+
+
       const items = document.querySelectorAll(".ponyRideItem");
       items.forEach((item, index) => {
         if (item.querySelector("h1").textContent === sectionName) {
@@ -68,14 +74,14 @@ function About() {
                         <h1>Work</h1>
                     </div>
                     <button className="ponyPrevious" onClick = {handlePrevious}>Previous</button>
-                    <button className="ponyNext" onClick = {handleNext}>Next</button>
+                    <button className="ponyNext" onClick =  {handleNext}>Next</button>
 
                     <div className='aboutNav'>
 
                     <a
-              className={`aboutSection ${
+              className= {`aboutSection ${
                 selectedSection === 'Family' ? 'selected' : ''
-              }`}
+              } customNavLink flipIt`}
               onClick={handleClick}
             >
               Family
@@ -83,15 +89,15 @@ function About() {
             <a
               className={`aboutSection ${
                 selectedSection === 'Hobbies' ? 'selected' : ''
-              }`}
+              } customNavLink flipIt`}
               onClick={handleClick}
             >
-              Hobbies
+            Hobbies
             </a>
             <a
               className={`aboutSection ${
                 selectedSection === 'Work' ? 'selected' : ''
-              }`}
+              } customNavLink flipIt`}
               onClick={handleClick}
             >
               Work
