@@ -48,9 +48,11 @@ function About() {
 
 
     const items = document.querySelectorAll(".ponyRideItem");
+    
     items.forEach((item, index) => {
       if (item.querySelector("h1").textContent === sectionName) {
-        item.classList.remove("hide");
+        item.classList.remove("hide")
+        item.classList.add("ponyAnimation");
         setActiveIndex(index);
       } else {
         item.classList.add("hide");
@@ -59,10 +61,19 @@ function About() {
   }
 
   function handleNext() {
+    const ponyNext = document.querySelector('.ponyNext');
+    ponyNext.classList.add("animation");
+    ponyNext.addEventListener('animationend', () =>{
+      ponyNext.classList.remove("animation");
+    });
     const items = document.querySelectorAll(".ponyRideItem");
     if (activeIndex < items.length - 1) {
       items[activeIndex].classList.add("hide");
+      items[activeIndex].classList.remove("ponyAnimation");
       items[activeIndex + 1].classList.remove("hide");
+      items[activeIndex+1].classList.add("ponyAnimation");
+      // items[activeIndex +1].classList.add("ponyAnimation");
+      // items[activeIndex -1].classList.remove("ponyAnimation");
       setActiveIndex(activeIndex + 1);
       setSelectedSection(items[activeIndex + 1].querySelector("h1").textContent);
     } else {
@@ -75,10 +86,18 @@ function About() {
   }
 
   function handlePrevious() {
+    const ponyNext = document.querySelector('.ponyPrevious');
+    ponyNext.classList.add("prevAnimation");
+    ponyNext.addEventListener('animationend', () =>{
+      ponyNext.classList.remove("prevAnimation");
+    });
+    
     const items = document.querySelectorAll(".ponyRideItem");
     if (activeIndex > 0) {
       items[activeIndex].classList.add("hide");
+      items[activeIndex].classList.remove("ponyAnimation");
       items[activeIndex - 1].classList.remove("hide");
+      items[activeIndex -1].classList.add("ponyAnimation");
       setActiveIndex(activeIndex - 1);
       setSelectedSection(items[activeIndex - 1].querySelector("h1").textContent);
     } else {
@@ -94,13 +113,13 @@ function About() {
     <div className="backgroundAbout">
       <div className='containerAbout'>
         <div className='ponyRide Myinfo'>
-          <div className="ponyRideItem">
+          <div className="ponyRideItem family ponyAnimation">
             <h1>Family</h1>
           </div>
-          <div className="ponyRideItem hide">
+          <div className="ponyRideItem hobbies hide ponyAnimation">
             <h1>Hobbies</h1>
           </div>
-          <div className="ponyRideItem hide">
+          <div className="ponyRideItem work hide ponyAnimation">
             <h1>Work</h1>
           </div>
           <button className="ponyPrevious" onClick={handlePrevious}>Previous</button>

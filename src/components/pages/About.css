@@ -15,25 +15,113 @@
 .ponyRideItem {
   height: 100%;
   width: 100%;
-  background-color: lightblue;
   border: 3px darkblue solid;
-  /* display: none; */
+ 
 }
-/* .ponyRideItem.selected {
-  display: block;
-} */
+.ponyAnimation{
+  animation: ponyExit 2s 1 linear forwards;
+}
+@keyframes ponyExit {
+  0%{transform: translateY(100%)};
+  100%{transform: translateY(0%)}
+}
+.family {
+  background-color: beige;
+}
+.hobbies {
+  background: lightcyan;
+}
+
+.work {
+  background-color: lemonchiffon;
+}
+
 .ponyPrevious {
   position: absolute;
   top: 50%;
   left: 10%;
-  transform: translate(-50%, -50%)
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  background-color: transparent;
+  border: none; 
 }
 .ponyNext {
   position: absolute;
   top: 50%;
   left: 90%;
-  transform: translate(-50%, -50%)
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
 }
+
+.ponyNext::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 109%;
+  transform: translate(-50%, -50%) rotate(-45deg);
+  width: 20px;
+  height: 20px;
+  border-bottom: 2px solid black;
+  border-right: 2px solid black;
+  }
+
+
+
+.ponyNext.animation::before {
+  content: '';
+  animation: nextMove 2s 1 linear;
+}
+.ponyPrevious.prevAnimation::before {
+  content: '';
+  animation: previousMove 2s 1 linear;
+}
+.ponyNext,  .ponyPrevious {
+  padding: 10px;
+  margin: 4px 3px;
+}
+
+
+
+.ponyPrevious::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 109%;
+  transform: translate(50%, -50%) rotate(135deg);
+  width: 20px;
+  height: 20px;
+  border-bottom: 2px solid black;
+  border-right: 2px solid black;
+  
+}
+.ponyPrevious::after{
+  content: '';
+  position: absolute;
+  top: 15%;
+  left: 85%;
+  width: 25px;
+  height: 30px;
+  border-right: 2px solid black;
+  pointer-events: all;
+}
+
+.ponyPrevious::after:hover {
+  border-right: 2px solid red;
+}
+.ponyNext::after{
+  content: '';
+  position: absolute;
+  top: 15%;
+  right: 85%;
+  width: 25px;
+  height: 30px;
+  border-left: 2px solid black;
+  
+}
+
+
 .hide {
   display: none;
 
@@ -74,10 +162,39 @@
   align-items: center;
   align-content: center;
 }
+.bigControls a.selected {
+  color: black;
+  animation: flip 5s infinite linear forwards;
+  transform-style: preserve-3d;
+  background: linear-gradient(to right, red 30%, yellow 60%, orange 75%);
+  box-shadow: 5px 5px 10px red,
+              -5px -5px 10px yellow,
+              5px -5px 10px orange,
+              -5px 5px 10px pink;
+  border-radius: 95%;
+  
+}
 .littleControls {
   display: flex;
   align-items: center;
   align-content: center;
+}
+
+.littleControls a.selected {
+  background: linear-gradient(45deg, red, yellow, orange, pink);
+  opacity: 1;
+}
+
+.circle {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin: 5px 25px;
+  padding: 10px;
+  opacity: 50%;
+  border: 2px black solid;
+  
+
 }
 
 
@@ -91,34 +208,20 @@
     transform: rotateY(360deg) rotateZ(360deg)
   }
 }
+@keyframes nextMove {
+  0%{transform: translate(-50%, -50%) rotate(-45deg)}
+  100%{transform: translate(300%, -50% ) rotate(-45deg)};
+}
+@keyframes previousMove {
+  0%{transform: translate(50%, -50%) rotate(135deg)}
+  100%{transform: translate(-300%, -50% ) rotate(135deg)};
+}
 
 
 
-  .circle {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    margin: 5px 25px;
-    padding: 10px;
-    opacity: 50%;
-    border: 2px black solid;
-    
-
-  }
 
 
-  .aboutsection.selected.circle {
-    opacity: 100%;
-    outline: black 2px solid;
-    box-shadow: 1px 1px 12px;
-    animation: smallSelected 1s infinite linear !important;
-    
-   
-  }
 
 
-  @keyframes smallSelected{
-    0% {transform: translateY(0px)};
-    50% {transform: translateY(200px) };
-    100%{transform: translateY(150px)};
-  }
+
+
