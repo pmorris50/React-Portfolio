@@ -6,11 +6,12 @@ import { IconContext } from 'react-icons';
 import { FcIphone, FcDownload } from 'react-icons/fc';
 import {MdOutlineEmail} from 'react-icons/md';
 import MyResume from '../images/Resume.pdf'
+import './Footer.css';
 
 
 const Footer = () => (
-  <div className ='mb-5 fbody'>
-  <Navbar bg="dark" variant="dark" fixed="bottom" className ='mt-1'>
+ 
+  <Navbar bg="dark" variant="dark" fixed="bottom" className ='mt-1 fbody'>
     <Container>
       <Row className='justify-content-center'>
         <Col md={12} className=''>
@@ -31,7 +32,7 @@ const Footer = () => (
       </Row>
     </Container>
   </Navbar>
-  </div>
+
 );
 
 export default Footer;

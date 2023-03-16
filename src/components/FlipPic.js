@@ -5,7 +5,7 @@ import BikePic from '../images/Bike.jpg';
 
 function FlipPic() {
   return (
-    <div className="container">
+    <div className="flipContainer">
       <div className="flip-card">
         <div className="flip-card-inner">
           <div className="flip-card-front">

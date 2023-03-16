@@ -7,6 +7,8 @@ import About from './pages/About';
 import Home from './pages/Home';
 import Footer from './Footer';
 import Resume from './pages/Resume';
+import './PortfolioContainer.css'
+import NavigationBar from './Navbar';
 
 
 
@@ -15,6 +17,7 @@ import Resume from './pages/Resume';
 
 export default function PortfolioContainer() {
     const [currentPage, setCurrentPage] = useState('About');
+   
 
     const renderPage = () => {
     
@@ -36,17 +39,20 @@ export default function PortfolioContainer() {
 const handlePageChange = (page) => setCurrentPage(page);
 
 return (
-    <div>
-      <div>
-        {/* <Navbar handlePageChange={handlePageChange} /> */}
-      </div>
-      <div>
+ 
+  <div className= "mainBackground" >
+      <NavigationBar  handlePageChange={handlePageChange} />
+      
+   
+      <div className = "pageContent">
         {renderPage()}
-      </div>
-      {/* <div>
-       <div> <Footer/> </div>
-    </div> */}
+        </div>
+     
+        <Footer/> 
+       
+    
     </div>
+    
   )
 
 

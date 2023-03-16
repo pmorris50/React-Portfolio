@@ -54,9 +54,9 @@ const ContactForm = () => {
   };
 
   return (
-<div className =  'backgroundContact'>
 
-    <container className="container" >
+
+    <container className="contactContainer" >
       
       <div className = 'm-5 p-3 customCard' >
     
@@ -96,7 +96,7 @@ const ContactForm = () => {
       </div>
       
     </container>
-    </div>
+  
 
   )
 }

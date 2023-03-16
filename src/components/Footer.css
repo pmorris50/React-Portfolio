@@ -1,4 +1,5 @@
 .fbody {
-    padding-top: 100px;
+    opacity: .5;
     position: absolute;
+    height: 50px;
 }
