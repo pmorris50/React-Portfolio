@@ -15,7 +15,7 @@ function MyCard({ project }) {
       padding: '16px',
       width: '100%',
       boxSizing: 'border-box',
-      height: '400px',
+      height: '475px',
       marginTop: '100px;',
      
       

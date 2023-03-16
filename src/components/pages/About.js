@@ -16,7 +16,7 @@ function About() {
   }, []);
 
   function handleClick() {
-    setFlipped(!flipped);
+    setFlipped((prevFlipped) => !prevFlipped);
   }
 
   return (
@@ -25,7 +25,7 @@ function About() {
         <div className="front">
           <h1 className="fTitle">Family</h1>
           <div className="textContainer">
-            <p className="bio">Originally from Texas, but We found our home in the Rocky Mountains after my NFL career was over in Denver. My Wife and I enjoy camping and mountain biking. The amazing scenary and mountainous playground make for days well spent in the mountians! </p>
+            <p className="bio"> I am originally from Texas, but after I finished my NFL career in Denver, my wife and I decided to make the Rocky Mountains our home.  My Wife and I enjoy camping, fishing and mountain biking. Physical fitness has played a huge role in my life and the steep inclines and high altitude make for tiresome days without the need for a gym membership. No matter the season, there are always fun outdoor activities to do!  </p>
             <div className="pictures">
               {windowWidth > 768 ? <Rotate3d /> : <SmallPicture />}
             </div>
@@ -49,7 +49,7 @@ function About() {
             <div className="listContainer past">
               <h2 className="pastheader">The Past</h2>
               <ul className="nfl list"> NFL
-                <li className="nfl item" >3 year career</li>
+                <li className="nfl item" >Three year career</li>
                 <li className="nfl item" >Center</li>
                 <li className="nfl item" >Steelers</li>
                 <li>Broncos</li>
@@ -63,19 +63,10 @@ function About() {
 
             </div>
             <div className="listContainer future">
-              <h2 className="pastheader">Moving Forward</h2>
-              <ul className="nfl list"> NFL
-                <li className="nfl item" >3 year career</li>
-                <li className="nfl item" >Center</li>
-                <li className="nfl item" >Steelers</li>
-                <li>Broncos</li>
-              </ul>
+              <h2 className="pastheader">Today</h2>
+             <p className = 'todayP'> I enjoy the problem solving naturecoding and develpment provide. Since my NFL career has been over, I have been searching for a career path that allows me to develop and hone a skill with practice. Deploying application   gives me a similar satisifaction to winning a game.  I absolutely enjoy the grind that goes into development. </p>
 
 
-              <ul className="loan list">Loan Originator
-                <li className="loan item">Pulte Mortgage</li>
-                <li className="loan item">1 Year</li>
-              </ul>
 
             </div>
           </div>

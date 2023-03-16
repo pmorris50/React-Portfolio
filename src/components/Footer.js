@@ -11,11 +11,11 @@ import './Footer.css';
 
 const Footer = () => (
  
-  <Navbar bg="dark" variant="dark" fixed="bottom" className ='mt-1 fbody'>
-    <Container>
+  <Navbar bg="dark" variant="dark" fixed="bottom" className ='mt-1 ml-3 fbody'>
+ 
       <Row className='justify-content-center'>
-        <Col md={12} className=''>
-          <Nav className="mr-auto" >
+        <Col md={12}>
+          <Nav className="mr-auto ml-5" >
             <IconContext.Provider value={{ color: '#C0C0C0', size: 28 }}>
               <div className='d-flex justify-content-center'>
                   <Nav.Link target="_blank" href="https://github.com/pmorris50"> <FaGithubSquare /></Nav.Link>
@@ -30,7 +30,7 @@ const Footer = () => (
           </Nav>
         </Col>
       </Row>
-    </Container>
+    
   </Navbar>
 
 );

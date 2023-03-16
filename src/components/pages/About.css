@@ -103,13 +103,14 @@
  z-index: 2;
  z-index: 2;
  color: black;
+ margin-top: 6px;
 }
 
 .list {
   position: relative;
   margin: 15px;
   margin-left: 90px;
-  border: 2px dashed green;
+  list-style: none;
   grid-row: 2;
   flex: 0 0 calc(33.333% -30px);
   align-items: center;
@@ -230,13 +231,7 @@
 
 
 
-.btnControl:hover {
-  transform: scale(1.2);
-  animation-play-state: paused;
-  box-shadow: inset 1px 1px 10px 3px lime;
-  border: none;
 
-}
 
 
 
@@ -259,6 +254,7 @@
 .btnControl.toFamily:hover {
   box-shadow: inset 1px 1px 10px 3px magenta;
 }
+
 
 .btnText {
   white-space: nowrap;
@@ -326,6 +322,25 @@
 .btnControl.toFamily:hover .t {
   color: magenta;
   animation: none;
+  
+}
+.btnControl:hover {
+  transform: scale(1.2);
+  animation-play-state: paused;
+  box-shadow: inset 1px 1px 10px 3px lime;
+  border: none;
+
+}
+.btnControl.toFamily:hover {
+  transform: scale(1.2);
+  animation-play-state: paused;
+  box-shadow: inset 1px 1px 10px 3px magenta;
+  border: none;
+}
+.todayP {
+  padding: 10px;
+ font-size: large;
+ color: black;
 }
 
 
