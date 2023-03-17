@@ -1,18 +1,24 @@
 {
   "files": {
-    "main.css": "/React-Portfolio/static/css/main.bc9d57f2.css",
-    "main.js": "/React-Portfolio/static/js/main.a4a8a240.js",
+    "main.css": "/React-Portfolio/static/css/main.c3bae7c8.css",
+    "main.js": "/React-Portfolio/static/js/main.c6307e37.js",
     "static/js/787.1ed0c42c.chunk.js": "/React-Portfolio/static/js/787.1ed0c42c.chunk.js",
-    "static/media/background.jpg": "/React-Portfolio/static/media/background.97526a31fa46c9b10e9e.jpg",
-    "static/media/Resume.pdf": "/React-Portfolio/static/media/Resume.6b0b7ae3531568c64bd0.pdf",
-    "static/media/profile.jpg": "/React-Portfolio/static/media/profile.c57733ef4db474b49b1a.jpg",
+    "static/media/fatbike.jpg": "/React-Portfolio/static/media/fatbike.4fb5a0ee753d8266f598.jpg",
+    "static/media/Resume.pdf": "/React-Portfolio/static/media/Resume.32e27dccb24934199d66.pdf",
+    "static/media/Bike.jpg": "/React-Portfolio/static/media/Bike.d8532a65d46419241868.jpg",
+    "static/media/MountainGoat.jpg": "/React-Portfolio/static/media/MountainGoat.280baeec0cab4625691a.jpg",
+    "static/media/Camper.jpg": "/React-Portfolio/static/media/Camper.99ce59050db75e4d81bf.jpg",
+    "static/media/Wife.jpg": "/React-Portfolio/static/media/Wife.36d535757acd3d385b6c.jpg",
+    "static/media/inLaws.jpg": "/React-Portfolio/static/media/inLaws.3a0519c06812fda8d4db.jpg",
+    "static/media/Regi.jpg": "/React-Portfolio/static/media/Regi.90c9332e299ec4c94406.jpg",
+    "static/media/Christmas.JPG": "/React-Portfolio/static/media/Christmas.77d6324e2974dd85c767.JPG",
     "index.html": "/React-Portfolio/index.html",
-    "main.bc9d57f2.css.map": "/React-Portfolio/static/css/main.bc9d57f2.css.map",
-    "main.a4a8a240.js.map": "/React-Portfolio/static/js/main.a4a8a240.js.map",
+    "main.c3bae7c8.css.map": "/React-Portfolio/static/css/main.c3bae7c8.css.map",
+    "main.c6307e37.js.map": "/React-Portfolio/static/js/main.c6307e37.js.map",
     "787.1ed0c42c.chunk.js.map": "/React-Portfolio/static/js/787.1ed0c42c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.bc9d57f2.css",
-    "static/js/main.a4a8a240.js"
+    "static/css/main.c3bae7c8.css",
+    "static/js/main.c6307e37.js"
   ]
 }
